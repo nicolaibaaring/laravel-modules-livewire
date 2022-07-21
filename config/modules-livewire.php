@@ -30,8 +30,8 @@ return [
     // 'custom_modules' => [
     //     'Chat' => [
     //         'path' => base_path('libraries/Chat'),
-    //         // 'source_path' => base_path('libraries/Chat/src'),
     //         'module_namespace' => 'Libraries\\Chat',
+    //         // 'source_path' => base_path('libraries/Chat/src'),
     //         // 'namespace' => 'Http\\Livewire',
     //         // 'view' => 'Resources/views/livewire',
     //         // 'name_lower' => 'chat',

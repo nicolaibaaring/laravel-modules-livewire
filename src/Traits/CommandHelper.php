@@ -36,7 +36,7 @@ trait CommandHelper
         if ($this->isCustomModule()) {
             $module = config("modules-livewire.custom_modules.{$moduleName}");
 
-            $path = $module['path'] ?? '';
+            $path = $module['source_path'] ?? $module['path'] ?? '';
 
             if (! $module || ! File::isDirectory($path)) {
                 $this->line("<options=bold,reverse;fg=red> WHOOPS! </> 😳 \n");
@@ -79,6 +79,15 @@ trait CommandHelper
     {
         $path = $this->isCustomModule()
             ? config("modules-livewire.custom_modules.{$this->module}.path")
+            : $this->module->getPath();
+
+        return strtr($path, ['\\' => '/']);
+    }
+
+    protected function getModuleSourcePath()
+    {
+        $path = $this->isCustomModule()
+            ? (config("modules-livewire.custom_modules.{$this->module}.source_path") ?? config("modules-livewire.custom_modules.{$this->module}.path"))
             : $this->module->getPath();
 
         return strtr($path, ['\\' => '/']);

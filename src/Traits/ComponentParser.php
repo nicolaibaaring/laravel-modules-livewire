@@ -60,7 +60,7 @@ trait ComponentParser
 
     protected function getClassInfo()
     {
-        $modulePath = $this->getModulePath();
+        $modulePath = $this->getModuleSourcePath();
 
         $moduleLivewireNamespace = $this->getModuleLivewireNamespace();
 
@@ -166,7 +166,12 @@ trait ComponentParser
 
     protected function getClassSourcePath()
     {
-        return Str::after($this->component->class->file, $this->getBasePath() . '/');
+        return Str::after($this->component->class->file, $this->getBasePath() . '/'. $this->getCustomSourcePath());
+    }
+
+    protected function getCustomSourcePath()
+    {
+        return 'src/';
     }
 
     protected function getClassNamespace()
