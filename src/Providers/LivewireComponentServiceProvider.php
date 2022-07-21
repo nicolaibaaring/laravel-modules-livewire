@@ -68,7 +68,7 @@ class LivewireComponentServiceProvider extends ServiceProvider
         $modules->each(function ($module, $moduleName) {
             $moduleLivewireNamespace = $module['namespace'] ?? config('modules-livewire.namespace', 'Http\\Livewire');
 
-            $directory = (string) Str::of($module['path'] ?? '')
+            $directory = (string) Str::of($module['source_path'] ?? $module['path'] ?? '')
                 ->append('/' . $moduleLivewireNamespace)
                 ->replace(['\\'], '/');
 
