@@ -166,12 +166,7 @@ trait ComponentParser
 
     protected function getClassSourcePath()
     {
-        return Str::after($this->component->class->file, $this->getBasePath() . '/'. $this->getCustomSourcePath());
-    }
-
-    protected function getCustomSourcePath()
-    {
-        return 'src/';
+        return Str::after($this->component->class->file, $this->getBasePath() . '/');
     }
 
     protected function getClassNamespace()
