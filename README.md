@@ -161,6 +161,7 @@ Remove comment for these lines & add your custom modules.
     //     'Chat' => [
     //         'path' => base_path('libraries/Chat'),
     //         'module_namespace' => 'Libraries\\Chat',
+    //         // 'source_path' => base_path('libraries/Chat/src'),
     //         // 'namespace' => 'Http\\Livewire',
     //         // 'view' => 'Resources/views/livewire',
     //         // 'name_lower' => 'chat',
@@ -173,6 +174,8 @@ Remove comment for these lines & add your custom modules.
 > **path:** Add module full path (required).
 >
 > **module_namespace:** Add module namespace (required).
+>
+> **source_path:** Add module source path. This should be set, if your classes are in a module subdirectory like `/src`.
 >
 > **namespace:** By default using `config('modules-livewire.namespace')` value. You can set a different value for the specific module.
 >
